@@ -58,7 +58,7 @@ classdef AFG31021Virtual < tektronix.AFG31021Abstract
             this.lIsOn(this.u8Ch) = true;
         end
         
-        function turnOff5VTTL(this)
+        function turnOff5V(this)
             this.lIsOn(this.u8Ch) = false;
         end
         
