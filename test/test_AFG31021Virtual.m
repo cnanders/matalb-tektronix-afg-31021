@@ -6,10 +6,7 @@ addpath(genpath(cDirSrc));
 cDirMpm = fullfile(cDirThis, '..', 'mpm-packages');
 addpath(genpath(cDirMpm));
 
-comm = tektronix.AFG31021( ...
-    'cTcpipHost', '192.168.20.38', ...
-    'lDebug', true ...
-);
+comm = tektronix.AFG31021Virtual();
                 
 comm.turnOn5V();
 
