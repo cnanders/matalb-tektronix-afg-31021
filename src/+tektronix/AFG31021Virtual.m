@@ -3,10 +3,7 @@ classdef AFG31021Virtual < tektronix.AFG31021Abstract
     %   Detailed explanation goes here
     
     properties
-        
-        % Requires port 5555
-        
-        
+                
     end
     
     properties (Access = private)
@@ -43,14 +40,14 @@ classdef AFG31021Virtual < tektronix.AFG31021Abstract
             c = 'AFG31021Virtual';
         end
         
-        % @return {logical 1x1} - true if outputting 5VTTL or if in the 
-        % middle of communication between requesting 5VTTL and knowing 100%
+        % @return {logical 1x1} - true if outputting 5V or if in the 
+        % middle of communication between requesting 5V and knowing 100%
         % that the 
         function l = getIsOn(this)
             l = this.lIsOn(this.u8Ch);
         end
         
-        % Create a single 5 Volt TTL pulse of specified duration in
+        % Create a single 5 Volt  pulse of specified duration in
         % seconds
         % @param {double 1x1} dSec - pulse duration in seconds
         
@@ -65,7 +62,7 @@ classdef AFG31021Virtual < tektronix.AFG31021Abstract
         function trigger5VPulse(this, dSec)
             
             if this.lIsOn(this.u8Ch) == true
-                fprintf('rigol.AFG31021Virtual.trigger5VTTLPulse returning since already outputting 5VTTL\n');
+                fprintf('rigol.AFG31021Virtual.trigger5VPulse returning since already outputting 5V\n');
                 return
             end
             
